@@ -1,0 +1,13 @@
+proc neuroon2_0_40_4 () {
+	init
+	reset init
+
+	program s110_nrf51822_7.3.0_softdevice.bin verify 0x00000000
+	program neuroon_bootloader1_0_0_1.bin verify 0x03D000
+	program neuroon_dfu1_0_0_12.bin verify 0x030000
+	program neuroon2_0_40_4.bin verify 0x017000
+
+	reset run
+
+	shutdown
+}
